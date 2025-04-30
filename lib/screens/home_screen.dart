@@ -13,7 +13,6 @@ class HomeScreen extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              // الانتقال إلى شاشة البحث عند الضغط على أيقونة البحث
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -34,7 +33,6 @@ class HomeScreen extends StatelessWidget {
               style: TextStyle(fontSize: 18),
             ),
             const SizedBox(height: 20),
-            // زر للبدء في البحث عن الطقس
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -51,7 +49,7 @@ class HomeScreen extends StatelessWidget {
               ),
               child: const Text(
                 "Get Weather",
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(fontSize: 18, color: Colors.white),
               ),
             ),
           ],

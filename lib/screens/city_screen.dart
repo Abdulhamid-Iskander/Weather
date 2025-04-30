@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import '../models/weather_model.dart'; // استيراد نموذج بيانات الطقس
+import '../models/weather_model.dart';
 
 class CityScreen extends StatelessWidget {
-  final WeatherModel weather; // بيانات الطقس التي يتم استقبالها
+  final WeatherModel weather;
 
-  const CityScreen(
-      {super.key, required this.weather}); // constructor معدل لاستقبال البيانات
-
+  const CityScreen({super.key, required this.weather});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +32,6 @@ class CityScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // عرض اسم المدينة من بيانات API
             Text(
               weather.city,
               style: const TextStyle(
@@ -42,7 +39,6 @@ class CityScreen extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            // عرض اسم الدولة من بيانات API
             Text(
               weather.country,
               style: const TextStyle(fontSize: 16),
@@ -51,7 +47,6 @@ class CityScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // عرض أيقونة الطقس من API
                 Image.network(
                   weather.iconUrl,
                   width: 40,
@@ -62,7 +57,6 @@ class CityScreen extends StatelessWidget {
                       color: Colors.yellow),
                 ),
                 const SizedBox(width: 16),
-                // عرض درجة الحرارة من API
                 Text(
                   "${weather.tempC}°C",
                   style: const TextStyle(
@@ -73,7 +67,6 @@ class CityScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 32),
-            // عرض حالة الطقس من API
             Text(
               weather.condition,
               style: const TextStyle(

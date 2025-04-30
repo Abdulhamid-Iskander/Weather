@@ -36,13 +36,12 @@ class SearchScreen extends StatelessWidget {
                 suffixIcon: IconButton(
                   icon: const Icon(Icons.search, color: Colors.orange),
                   onPressed: () {
-                    _searchCity(context); // استدعاء دالة البحث
+                    _searchCity(context);
                   },
                 ),
               ),
               textInputAction: TextInputAction.search,
-              onSubmitted: (_) =>
-                  _searchCity(context), // البحث عند الضغط على Enter
+              onSubmitted: (_) => _searchCity(context),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
@@ -66,10 +65,8 @@ class SearchScreen extends StatelessWidget {
     );
   }
 
-  // دالة البحث الجديدة
   void _searchCity(BuildContext context) {
     if (_controller.text.trim().isEmpty) {
-      // عرض رسالة خطأ إذا كان الحقل فارغًا
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('Please enter a city name'),
@@ -79,7 +76,6 @@ class SearchScreen extends StatelessWidget {
       return;
     }
 
-    // الانتقال إلى شاشة التحميل مع اسم المدينة
     Navigator.push(
       context,
       MaterialPageRoute(
