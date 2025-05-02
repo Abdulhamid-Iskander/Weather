@@ -12,12 +12,12 @@ class CityScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: const Text('Weather App'),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.search),
-          ),
-        ],
+        // actions: [
+        //   IconButton(
+        //     onPressed: () {},
+        //     icon: const Icon(Icons.search),
+        //   ),
+        // ],
       ),
       extendBodyBehindAppBar: true,
       body: Container(

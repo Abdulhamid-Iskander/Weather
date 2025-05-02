@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:weather/services/weather_service.dart';
 import 'city_screen.dart';
+import '../services/weather_service.dart';
 
 class LoadingScreen extends StatefulWidget {
   final String city;

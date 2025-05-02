@@ -21,7 +21,7 @@ class SearchScreen extends StatelessWidget {
             TextField(
               controller: _controller,
               decoration: InputDecoration(
-                hintText: 'Enter city name (e.g. London, Cairo)',
+                hintText: 'Enter city name',
                 labelText: 'City Name',
                 contentPadding:
                     const EdgeInsets.symmetric(horizontal: 16, vertical: 12),

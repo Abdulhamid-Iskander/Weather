@@ -1,20 +1,25 @@
-import 'dart:convert';
-import 'package:http/http.dart' as http;
-import '/models/weather_model.dart';
+import 'package:dio/dio.dart';
+import '../models/weather_model.dart';
 
 class WeatherService {
   static const String baseUrl = "http://api.weatherapi.com/v1";
   final String apiKey = 'e2f4ecbc17c04807aa2165342253004';
 
-  Future<WeatherModel> getWeather(String city) async {
-    final response = await http.get(
-      Uri.parse("$baseUrl/current.json?key=$apiKey&q=$city"),
-    );
+  final Dio _dio = Dio();
 
-    if (response.statusCode == 200) {
-      return WeatherModel.fromJson(jsonDecode(response.body));
-    } else {
-      throw Exception("Failed to load weather data");
+  Future<WeatherModel> getWeather(String city) async {
+    try {
+      final response = await _dio.get(
+        "$baseUrl/current.json",
+        queryParameters: {
+          "key": apiKey,
+          "q": city,
+        },
+      );
+
+      return WeatherModel.fromJson(response.data);
+    } catch (e) {
+      throw Exception("❌ Failed to load weather data: $e");
     }
   }
 }
